@@ -18,6 +18,20 @@ Architecture Decision Records (ADRs) document important architectural decisions 
 | 0000-template.md | ADR Template 1 | [adr/0000-template.md](adr/0000-template.md) | [decision-record-template-by-michael-nygard](https://github.com/joelparkerhenderson/architecture-decision-record/tree/main/locales/en/templates/decision-record-template-by-michael-nygard) |
 | 0001-template.md | ADR Template 2 | [adr/0001-template.md](adr/0001-template.md) | - |
 
+## Fundamentals
+
+Quick references for building real-world projects. Keep these handy when working on any challenge.
+
+| Topic | File | What it covers |
+|-------|------|----------------|
+| System Design | [system-design-fundamentals.md](system-design-fundamentals.md) | Load balancers, caching, DB types, message queues, CDN, API styles, observability |
+| Database Schema Design | [database-schema-design.md](database-schema-design.md) | Data modeling, relationships, normalization, data types, indexing |
+| API Design | [api-design-reference.md](api-design-reference.md) | REST conventions, HTTP status codes, error format, pagination, versioning |
+| Testing | [testing-fundamentals.md](testing-fundamentals.md) | Testing pyramid, test types, mocking, naming, coverage |
+| Security | [security-basics-checklist.md](security-basics-checklist.md) | OWASP Top 10, input validation, auth, SQL injection, XSS, secrets |
+| Git & PR | [git-and-pr-conventions.md](git-and-pr-conventions.md) | Branch naming, commit messages, PR template, review checklist |
+| Cost Estimation | [cost-estimation-guide.md](cost-estimation-guide.md) | Cloud pricing models, back-of-envelope calculation, AWS pricing reference |
+
 ## Code Style
 
 This section contains coding standards and style guides for different programming languages used in our projects.
