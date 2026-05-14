@@ -1,6 +1,6 @@
-# API Design Reference
+# REST API
 
-Quick reference for building clean, consistent REST APIs.
+The most common API style. Uses HTTP methods on resource URLs.
 
 ## URL Structure
 
@@ -16,7 +16,7 @@ DELETE /api/v1/users/123      → Delete user 123
 **Rules:**
 - Use **nouns** for resources, not verbs (`/users` not `/getUsers`)
 - Use **plural** for collections (`/users` not `/user`)
-- Use **kebab-case** for multi-word resources (`/user-profiles` not `/userProfiles`)
+- Use **kebab-case** for multi-word resources (`/user-profiles`)
 - Nest only one level deep (`/users/123/orders` is OK, `/users/123/orders/456/items` is not)
 
 ## HTTP Methods
@@ -31,24 +31,20 @@ DELETE /api/v1/users/123      → Delete user 123
 
 ## HTTP Status Codes
 
-**Use these consistently:**
-
-| Code | Meaning | When to use |
-|---|---|---|
-| 200 | OK | Successful GET, PUT, PATCH, DELETE |
-| 201 | Created | Successful POST |
-| 204 | No Content | Successful DELETE with no body |
-| 400 | Bad Request | Invalid input, malformed JSON |
-| 401 | Unauthorized | Missing or invalid authentication |
-| 403 | Forbidden | Authenticated but not allowed |
-| 404 | Not Found | Resource doesn't exist |
-| 409 | Conflict | Duplicate resource, state conflict |
-| 422 | Unprocessable Entity | Valid JSON but validation failed |
-| 500 | Internal Server Error | Unexpected server failure |
+| Code | When to use |
+|---|---|
+| 200 | Successful GET, PUT, PATCH, DELETE |
+| 201 | Successful POST |
+| 204 | Successful DELETE with no body |
+| 400 | Invalid input, malformed JSON |
+| 401 | Missing or invalid authentication |
+| 403 | Authenticated but not allowed |
+| 404 | Resource doesn't exist |
+| 409 | Duplicate resource, state conflict |
+| 422 | Valid JSON but validation failed |
+| 500 | Unexpected server failure |
 
 ## Error Response Format
-
-Always return a consistent error structure:
 
 ```json
 {
@@ -63,8 +59,6 @@ Always return a consistent error structure:
 ```
 
 ## Pagination
-
-For list endpoints returning many results:
 
 **Request:** `GET /api/v1/users?page=2&limit=20`
 
@@ -81,22 +75,29 @@ For list endpoints returning many results:
 }
 ```
 
-## Filtering & Sorting
+## Filtering, Sorting, Search
 
 - **Filter:** `GET /api/v1/users?status=active&role=admin`
 - **Sort:** `GET /api/v1/users?sort=created_at&order=desc`
 - **Search:** `GET /api/v1/users?q=john`
 
-## API Versioning
+## Versioning
 
 Put version in the URL path: `/api/v1/...`
 
-Bump version only when you make **breaking changes** (removing fields, changing types, renaming endpoints).
+Bump version only when making **breaking changes** (removing fields, changing types, renaming endpoints).
+
+## When to Use REST
+
+| Good fit | Not ideal |
+|---|---|
+| CRUD-heavy apps | Real-time updates |
+| Public APIs | Complex nested queries (over-fetching) |
+| Simple resource models | High-frequency small updates |
 
 ## General Tips
 
 - Return the created resource in POST responses (not just an ID)
-- Use `PATCH` for partial updates, `PUT` for full replacements
 - Accept and return `application/json` by default
+- Use consistent field naming (`snake_case` or `camelCase`, pick one)
 - Document every endpoint with request/response examples
-- Use consistent field naming (choose `snake_case` or `camelCase` and stick to it)

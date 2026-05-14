@@ -26,7 +26,7 @@ Quick references for building real-world projects. Keep these handy when working
 |-------|------|----------------|
 | System Design | [system-design-fundamentals.md](system-design-fundamentals.md) | Load balancers, caching, DB types, message queues, CDN, API styles, observability |
 | Database Schema Design | [database-schema-design.md](database-schema-design.md) | Data modeling, relationships, normalization, data types, indexing |
-| API Design | [api-design-reference.md](api-design-reference.md) | REST conventions, HTTP status codes, error format, pagination, versioning |
+| API Design | [api-design/](api-design/) | REST, GraphQL, gRPC, WebSocket — when to use each, with examples |
 | Testing | [testing-fundamentals.md](testing-fundamentals.md) | Testing pyramid, test types, mocking, naming, coverage |
 | Security | [security-basics-checklist.md](security-basics-checklist.md) | OWASP Top 10, input validation, auth, SQL injection, XSS, secrets |
 | Git & PR | [git-and-pr-conventions.md](git-and-pr-conventions.md) | Branch naming, commit messages, PR template, review checklist |
