@@ -7,6 +7,8 @@ Gathering useful resources for engineering practice and use in TP-Coder Innovati
 
 Architecture Decision Records (ADRs) document important architectural decisions made in the project.
 
+เอกสารบันทึกการตัดสินใจสำคัญด้านสถาปัตยกรรมของโปรเจค
+
 ### How to use ADR
 
 ในทุก ๆ โปรเจค หากจะเริ่มเขียนโค้ดใด ๆ ให้ทำการบันทึกการออกแบบและความคิดของเราเองลงใน ADR เพื่อ mitigating เรื่องต่าง ๆ เช่น business impact, technical requirements, and other relevant factors.
@@ -22,6 +24,8 @@ Architecture Decision Records (ADRs) document important architectural decisions 
 
 Quick references for building real-world projects. Keep these handy when working on any challenge.
 
+ข้อมูลอ้างอิงฉบับย่อสำหรับการสร้างโปรเจคจริง ควรเปิดดูควบคู่ไปเมื่อทำ Challenge ต่างๆ
+
 | Topic | File | What it covers |
 |-------|------|----------------|
 | System Design | [system-design-fundamentals.md](system-design-fundamentals.md) | Load balancers, caching, DB types, message queues, CDN, API styles, observability |
@@ -36,7 +40,15 @@ Quick references for building real-world projects. Keep these handy when working
 
 This section contains coding standards and style guides for different programming languages used in our projects.
 
-| Style Guide | Source |
-|----------|-------------|
-| Google Style Guides | https://github.com/google/styleguide?tab=readme-ov-file |
+ส่วนรวบรวมมาตรฐานการเขียนโค้ดและสไตล์ไกด์สำหรับภาษาต่างๆ ที่ใช้ในโปรเจค
+
+| Language | Style Guide / Formatter | Source |
+|----------|-------------------------|--------|
+| **General** | Google Style Guides | https://github.com/google/styleguide |
+| **Java** | Palantir Java Format (via Spotless) | https://github.com/palantir/palantir-javaformat |
+| **JavaScript / TypeScript** | Airbnb Style Guide / Prettier | https://github.com/airbnb/javascript |
+| **Python** | PEP 8 / Black / Ruff | https://peps.python.org/pep-0008/ |
+| **C#** | Microsoft C# Conventions | https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions |
+| **Go** | Built-in Standard (`gofmt`) | https://go.dev/doc/effective_go |
+| **Rust** | Built-in Standard (`rustfmt` / `cargo fmt`) | https://rust-lang.github.io/api-guidelines/ |
 
